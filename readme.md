@@ -4,7 +4,7 @@ Ein leichtgewichtiges, aber extrem solides Python-Tool zur sicheren Ende-zu-Ende
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Hybride Verschlüsselung (RSA-OAEP + AES-256-GCM):**
   - **Asymmetrisch:** RSA-4096 mit OAEP-SHA256-Padding für sichere Key-Encapsulation (Schutz vor Padding-Oracle-Angriffen).
@@ -21,7 +21,7 @@ Ein leichtgewichtiges, aber extrem solides Python-Tool zur sicheren Ende-zu-Ende
 
 ---
 
-## 🏗️ Architekturübersicht
+## Architekturübersicht
 
 Hybride Verschlüsselung nutzt die Stärken beider Welten: Die Geschwindigkeit von AES für die Daten und die Flexibilität von RSA für den Schlüsselaustausch.
 
@@ -45,7 +45,7 @@ Hybride Verschlüsselung nutzt die Stärken beider Welten: Die Geschwindigkeit v
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### Voraussetzungen
 - Python 3.8+
@@ -65,7 +65,7 @@ pip install pycryptodome
 
 ---
 
-## 💻 Nutzung & Code-Beispiele
+## Nutzung & Code-Beispiele
 
 Das Skript kann sowohl als **interaktives Terminal-Programm** gestartet als auch als **Modul in eigenen Python-Projekten** importiert werden.
 
@@ -127,7 +127,7 @@ print("Ergebnis:", decrypted_message)
 
 ---
 
-## 🔒 Datenformat (JSON Payload)
+## Datenformat (JSON Payload)
 
 Die Ausgabe der Verschlüsselungsfunktionen ist ein kompaktes JSON-Paket. Alle Binärdaten (Nonces, Tags, Ciphertexts) sind URL-safe Base64-kodiert:
 
@@ -144,7 +144,7 @@ Die Ausgabe der Verschlüsselungsfunktionen ist ein kompaktes JSON-Paket. Alle B
 
 ---
 
-## 🛡️ Sicherheitshinweise
+## Sicherheitshinweise
 
 - **Private Keys schützen:** Der erzeugte RSA Private Key wird unverschlüsselt im PEM-Format gespeichert. In einer Produktionsumgebung sollte er mit einem Passwort schlüsselsicher auf der Festplatte abgelegt werden.
 - **Integritätsgarantie:** Wird ein einziges Zeichen des JSON-Pakets manipuliert, schlägt `cipher.decrypt_and_verify()` fehl und die Entschlüsselung bricht sofort ab.
